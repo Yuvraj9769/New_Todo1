@@ -26,7 +26,9 @@ const AddTodo = () => {
   const updateData = () => {
     if (inpData.current.value === "" || !inpData.current.value.trim()) {
       toast.error("Please  enter the task!");
-    } else {
+    } else if (!inpData.current.value.trim()) {
+      toast.error("Please  enter the task!");
+    } else if (inpData.current.value.trim()) {
       if (todos.includes(upDateval)) {
         const update = {
           type: "Update",

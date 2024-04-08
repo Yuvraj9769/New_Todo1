@@ -40,7 +40,7 @@ const TodoList = () => {
                 <MdModeEditOutline />
               </span>
               <span
-                className="text-xl text-slate-50 hover:cursor-pointer pointer-events-auto bg-red-600 hover:bg-red-700 p-3 rounded-md"
+                className="text-xl text-slate-50 hover:cursor-pointer bg-red-600 hover:bg-red-700 p-3 rounded-md"
                 onClick={() => delTodo(ind)}
               >
                 <MdDelete />
