@@ -12,7 +12,7 @@ const AddTodo = () => {
   }
 
   const getData = () => {
-    if (inpData.current.value === "") {
+    if (inpData.current.value === "" || !inpData.current.value.trim()) {
       toast.error("Please  enter the task!");
     } else {
       const sendData = {
@@ -24,15 +24,18 @@ const AddTodo = () => {
   };
 
   const updateData = () => {
-    if (inpData.current.value === "") {
+    if (inpData.current.value === "" || !inpData.current.value.trim()) {
       toast.error("Please  enter the task!");
     } else {
       if (todos.includes(upDateval)) {
-        const index = todos.indexOf(upDateval);
-        const newpdatearr = { ...todos[index], text: inpData.current.value };
-        const copyarr = [...todos];
-        copyarr[index] = newpdatearr;
-        setTodos(copyarr);
+        const update = {
+          type: "Update",
+          payload: {
+            data: upDateval,
+            text: inpData.current.value,
+          },
+        };
+        setTodos(update);
         inpData.current.value = "";
         setcheckUpdate(false);
       }
